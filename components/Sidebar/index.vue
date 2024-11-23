@@ -1,5 +1,5 @@
 <template>
-    <div class=" flex justify-center shadow-inner  ">
+    <div class=" flex justify-center     ">
 
  <div class=" w-[246.5px]  h-[1018px]    ">
 
@@ -33,7 +33,7 @@
 
  </div>
 
- <div class="  w-[218px] h-[169px]   bg-[#4FD1C5] space-y-2 rounded-2xl mt-8 p-6 ">
+ <div class="  w-[218px] h-[169px]    space-y-2 rounded-2xl mt-8 p-6  setimg">
 
      <div class="   bg-white group-hover:bg-[#4FD1C5]   rounded-xl w-8 h-8 flex items-center justify-center ">
         <Icon name="akar-icons:question" class="  text-[#4FD1C5] group-hover:text-white  transition-all duration-100 ease-linear " />
@@ -117,3 +117,11 @@ icons:'solar:rocket-bold'
 ]
 </script>
 
+<style scoped>
+.setimg{
+    background-image: url('../../assets/images/sidbar.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+</style>

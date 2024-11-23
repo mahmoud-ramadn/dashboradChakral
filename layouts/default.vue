@@ -3,7 +3,7 @@
     <!--  sidebar -->
       <Sidebar class="  pt-11 bg-[#F8F9FA]      col-span-2"/>
       <!--  header -->
-    <main class="  bg-[#F8F9FA] col-span-8 ">
+    <main class="  bg-[#F8F9FA] col-span-8 shadow-lg  ">
 <MainHeader/>
       <slot/>
     </main>

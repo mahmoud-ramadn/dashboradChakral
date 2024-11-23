@@ -70,7 +70,7 @@ It is all about who take the opportunity first.</p>
    <!-- charts -->
 
    <div class=" grid grid-cols-12 gap-4 my-4 h-[445px]  ">
-      <div class=" col-span-5  bg-white    rounded-md h-full  flex flex-col  justify-between ">
+      <div class=" col-span-5  bg-white  p-5   rounded-md h-full  flex flex-col  justify-between ">
          <!-- chart one -->
           <div class=" grounded-md h-[222px]">
 
@@ -94,6 +94,7 @@ It is all about who take the opportunity first.</p>
     :roundedCorners=20
     :show-tooltip="false"
     
+     :type="'grouped'"
 
   
   />
@@ -136,9 +137,9 @@ It is all about who take the opportunity first.</p>
 
 
       <div class=" col-span-7   rounded-md   bg-white gap-2   flex  items-center justify-center flex-col  h-[445px] ">
-        <div class=' self-baseline '>
-          <h1>Sales overview</h1>
-        <p>(+5) more in 2021</p>
+        <div class=' self-baseline  p-5 '>
+          <h1 class=" text-[#2D3748] text-lg  font-bold" >Sales overview</h1>
+        <p class=" text-sm text-[#68D391]  font-bold">(+5)  <span class=" text-[#A0AEC0]  font-normal ">more in 2021 </span> </p>
 
         </div>
       
@@ -348,7 +349,7 @@ const data = [
   { name: 'Jan', total: Math.floor(Math.random() * 2000) + 500, predicted: Math.floor(Math.random() * 2000) + 500 },
   { name: 'Feb', total: Math.floor(Math.random() * 2000) + 500, predicted: Math.floor(Math.random() * 2000) + 500 },
   { name: 'Mar', total: Math.floor(Math.random() * 2000) + 500, predicted: Math.floor(Math.random() * 2000) + 500 },
-  { name: 'Apr', total: Math.floor(Math.random() * 2000) + 500, predicted: Math.floor(Math.random() * 2000) + 500 },
+
 
 ]
 
@@ -357,7 +358,7 @@ const projectsTabels=[
    {
       icons:'devicon:xd',
       company:'Chakra Soft UI Version',
-       memeber:'',
+       memeber:'https://images.pexels.com/photos/29486501/pexels-photo-29486501/free-photo-of-stylish-woman-in-modern-urban-setting.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load',
       budugt:'$14,000',
 
       compultion:"60%",
@@ -368,7 +369,7 @@ const projectsTabels=[
    {
       icons:'devicon:xd',
       company:'Add Progress Track',
-       memeber:'../assets/images/brooke-cagle-g1Kr4Ozfoac-unsplash 1.png',
+       memeber:'https://images.pexels.com/photos/29486501/pexels-photo-29486501/free-photo-of-stylish-woman-in-modern-urban-setting.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load',
       budugt:'$3,000',
 
       compultion:"60%",
@@ -379,7 +380,7 @@ const projectsTabels=[
    {
       icons:'devicon:xd',
       company:'Fix Platform Errors',
-       memeber:'',
+       memeber:'https://images.pexels.com/photos/29486501/pexels-photo-29486501/free-photo-of-stylish-woman-in-modern-urban-setting.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load',
       budugt:'Not set',
    
       compultion:"10%",
@@ -390,7 +391,7 @@ const projectsTabels=[
    {
       icons:'devicon:xd',
       company:'Launch our Mobile App',
-       memeber:'',
+       memeber:'https://images.pexels.com/photos/29486501/pexels-photo-29486501/free-photo-of-stylish-woman-in-modern-urban-setting.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load',
       budugt:'$32,000',
       
       compultion:"100%",
@@ -401,7 +402,7 @@ const projectsTabels=[
    {
       icons:'devicon:xd',
       company:'Add the New Pricing Page',
-       memeber:'',
+       memeber:'https://images.pexels.com/photos/29486501/pexels-photo-29486501/free-photo-of-stylish-woman-in-modern-urban-setting.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load',
       budugt:'$400',
     
       compultion:"60%",
@@ -412,7 +413,7 @@ const projectsTabels=[
    {
       icons:'skill-icons:linkedin',
       company:'Redesign New Online Shop',
-       memeber:'',
+       memeber:'https://images.pexels.com/photos/29486501/pexels-photo-29486501/free-photo-of-stylish-woman-in-modern-urban-setting.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load',
       budugt:'$7,600',
    
       compultion:"20%",
