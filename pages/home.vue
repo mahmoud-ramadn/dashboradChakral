@@ -70,10 +70,13 @@ It is all about who take the opportunity first.</p>
    <!-- charts -->
 
    <div class=" grid grid-cols-12 gap-4 my-4 h-[445px]  ">
-      <div class=" col-span-5  bg-white  p-5  rounded-md h-full  flex flex-col  justify-between ">
+      <div class=" col-span-5  bg-white    rounded-md h-full  flex flex-col  justify-between ">
          <!-- chart one -->
-          <div class="  overflow-hidden  rounded-md h-[222px]">
-<BarChart  class="h-[222px] w-full"
+          <div class=" grounded-md h-[222px]">
+
+
+<BarChart     style=" height: 222px;   "
+ class="gradient rounded-xl  custom-bar-chart"
     :data="data"
     index="name"
     :categories="['total', 'predicted']"
@@ -82,6 +85,17 @@ It is all about who take the opportunity first.</p>
         ? `$ ${new Intl.NumberFormat('us').format(tick).toString()}`
         : ''
     }"
+    
+    
+    :colors="['white']"
+    :show-legend="false"
+    :show-grid-line="false"
+    :show-x-axis="false"
+    :roundedCorners=20
+    :show-tooltip="false"
+    
+
+  
   />
           </div>
           <!-- actvie user -->
@@ -121,8 +135,14 @@ It is all about who take the opportunity first.</p>
 
 
 
-      <div class=" col-span-7   rounded-md h-full bg-black ">
-        <highchart :options="options" style="  height: 100%;"/>
+      <div class=" col-span-7   rounded-md   bg-white gap-2   flex  items-center justify-center flex-col  h-[445px] ">
+        <div class=' self-baseline '>
+          <h1>Sales overview</h1>
+        <p>(+5) more in 2021</p>
+
+        </div>
+      
+        <AreaChart :data="data" index="name" :categories="['total', 'predicted']"  style=" width: 800px; height: 290px;"  :show-legend="false" :colors="['#4FD1C5','#2D3748']" />
 
       </div>
 
@@ -219,20 +239,7 @@ It is all about who take the opportunity first.</p>
 <script setup lang="ts">
 
 
-import { BarChart } from '@/components/ui/chart-bar'
 
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table'
-import { colors } from '@unovis/ts';
-import { item } from '@unovis/ts/components/bullet-legend/style';
-import { invoke } from '@vueuse/core';
 
 
 
@@ -336,148 +343,13 @@ const activeUsers=[
     layout:"default"
  })
 
-  const options = ref(
-  {
-    chart: {
-        type: 'area',
-        backgroundColor: 'red', // Light gray background
-        borderRadius: 10, // Rounded corners
-        spacing: [10, 10, 15, 10], // Spacing around the chart
-    },
-    accessibility: {
-        description: 'Image description: An area chart comparing the nuclear stockpiles of the USA and the USSR/Russia from 1945 to 2024.',
-    },
-    title: {
-        text: 'US and USSR Nuclear Stockpiles (1945-2024)',
-        style: {
-            color: '#fffff', // Dark text color
-            fontSize: '18px',
-            fontWeight: 'bold',
-        },
-    },
-    subtitle: {
-        text: 'Source: <a href="https://fas.org/issues/nuclear-weapons/status-world-nuclear-forces/" target="_blank">FAS</a>',
-        style: {
-            color: "green", // Subtle gray text
-            fontSize: '12px',
-        },
-    },
-    xAxis: {
-        allowDecimals: false,
-        lineColor: 'yellow', // Axis line color
-        gridLineColor: 'orange', // Grid lines color
-        labels: {
-            style: {
-                color: 'white', // Label color
-                fontSize: '12px',
-            },
-        },
-        accessibility: {
-            rangeDescription: 'Range: 1940 to 2024.',
-        },
-    },
-    yAxis: {
-        title: {
-            text: 'Number of Warheads',
-            style: {
-                color: '#333333', // Title color
-                fontSize: '14px',
-                fontWeight: 'bold',
-            },
-        },
-        gridLineColor:"green", // Grid lines color
-        labels: {
-            style: {
-                color: '#555555', // Label color
-                fontSize: '12px',
-            },
-        },
-    },
-    tooltip: {
-        backgroundColor: '#ffffff', // Tooltip background
-        borderColor: '#cccccc', // Tooltip border
-        borderRadius: 5,
-        style: {
-            color: '#333333', // Tooltip text color
-        },
-        pointFormat: '{series.name} had <b>{point.y:,.0f}</b> warheads in {point.x}',
-    },
-    plotOptions: {
-        area: {
-            pointStart: 1940,
-            marker: {
-                enabled: false,
-                symbol: 'circle',
-                radius: 3,
-                states: {
-                    hover: {
-                        enabled: true,
-                        fillColor: '#ffffff', // Marker fill on hover
-                        lineWidth: 2,
-                    },
-                },
-            },
-            fillOpacity: 0.5, // Adjust the area opacity
-        },
-    },
-    series: [
-        {
-            name: 'USA',
-            data: [
-                null, null, null, null, null, 2, 9, 13, 50, 170, 299, 438, 841,
-                1169, 1703, 2422, 3692, 5543, 7345, 12298, 18638, 22229, 25540,
-                28133, 29463, 31139, 31175, 31255, 29561, 27552, 26008, 25830,
-                26516, 27835, 28537, 27519, 25914, 25542, 24418, 24138, 24104,
-                23208, 22886, 23305, 23459, 23368, 23317, 23575, 23205, 22217,
-                21392, 19008, 13708, 11511, 10979, 10904, 11011, 10903, 10732,
-                10685, 10577, 10526, 10457, 10027, 8570, 8360, 7853, 5709, 5273,
-                5113, 5066, 4897, 4881, 4804, 4717, 4571, 4018, 3822, 3785, 3805,
-                3750, 3708, 3708, 3708, 3708,
-            ],
-            color: '#ff6f61', // Area fill color for USA
-            lineWidth: 2, // Line thickness
-        },
-        {
-            name: 'USSR/Russia',
-            data: [
-                null, null, null, null, null, null, null, null, null, 1, 5, 25,
-                50, 120, 150, 200, 426, 660, 863, 1048, 1627, 2492, 3346, 4259,
-                5242, 6144, 7091, 8400, 9490, 10671, 11736, 13279, 14600, 15878,
-                17286, 19235, 22165, 24281, 26169, 28258, 30665, 32146, 33486,
-                35130, 36825, 38582, 40159, 38107, 36538, 35078, 32980, 29154,
-                26734, 24403, 21339, 18179, 15942, 15442, 14368, 13188, 12188,
-                11152, 10114, 9076, 8038, 7000, 6643, 6286, 5929, 5527, 5215,
-                4858, 4750, 4650, 4600, 4500, 4490, 4300, 4350, 4330, 4310, 4495,
-                4477, 4489, 4380,
-            ],
-            color: '#4c9f70', // Area fill color for USSR/Russia
-            lineWidth: 2, // Line thickness
-        },
-    ],
-    legend: {
-        layout: 'horizontal',
-        align: 'center',
-        verticalAlign: 'bottom',
-        itemStyle: {
-            color: '#333333', // Legend text color
-            fontSize: '12px',
-        },
-        itemHoverStyle: {
-            color: '#000000', // Hover color
-        },
-    },
-}
-  )
  
-
 const data = [
   { name: 'Jan', total: Math.floor(Math.random() * 2000) + 500, predicted: Math.floor(Math.random() * 2000) + 500 },
   { name: 'Feb', total: Math.floor(Math.random() * 2000) + 500, predicted: Math.floor(Math.random() * 2000) + 500 },
   { name: 'Mar', total: Math.floor(Math.random() * 2000) + 500, predicted: Math.floor(Math.random() * 2000) + 500 },
   { name: 'Apr', total: Math.floor(Math.random() * 2000) + 500, predicted: Math.floor(Math.random() * 2000) + 500 },
-  { name: 'May', total: Math.floor(Math.random() * 2000) + 500, predicted: Math.floor(Math.random() * 2000) + 500 },
-  { name: 'Jun', total: Math.floor(Math.random() * 2000) + 500, predicted: Math.floor(Math.random() * 2000) + 500 },
-  { name: 'Jul', total: Math.floor(Math.random() * 2000) + 500, predicted: Math.floor(Math.random() * 2000) + 500 },
+
 ]
 
 
@@ -554,4 +426,11 @@ const projectsTabels=[
    
 </script>
 
- 
+<style scoped>
+
+.gradient {
+  background: linear-gradient(to right, #313860, #151928); /* From pink to orange */
+};
+
+
+</style>

@@ -1,10 +1,10 @@
 <template>
-    <div class=" flex justify-center   ">
+    <div class=" flex justify-center shadow-inner  ">
 
  <div class=" w-[246.5px]  h-[1018px]    ">
 
  <div class="    space-y-4  ">
- <div  class=" border-b-[1px] px-3   py-10 flex items-center gap-x-1">
+ <div  class=" border-b-[1px] px-3     py-10 flex items-center gap-x-1">
         <Icon name="raphael:icons" />
         <p class="text-[14px]  text-[#2D3748] font-bold ">PURITY UI DASHBOARD</p>
     </div>
