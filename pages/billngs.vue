@@ -15,6 +15,8 @@
         <Icon name="grommet-icons:mastercard" class="w-[49.22px] h-[32.81px]" />
        </div>
 
+       <!--   TEsti this code  -->
+
        <h4>7812 2139 0823 XXXX</h4>
        <div class="  flex items-center justify-center gap-4 ">
         <div>
@@ -28,7 +30,7 @@
         </div>
 
        </div>
-      
+
     </div>
 
 
@@ -45,12 +47,12 @@
           <hr class=" w-44  h-[1px] bg-black/35">
          <h3  class=" text-lg  text-[#2D3748] font-bold">{{ itme.pric }}</h3>
       </div>
-      
+
 
     </div>
 
   </div>
- 
+
 
   <form class=" p-5  bg-white  h-[172px] rounded-md space-y-3">
   <div class=" flex items-center   justify-between">
@@ -62,7 +64,7 @@
   <div class=" flex items-center justify-between gap-3">
 <div class="relative  w-[458.5px] ">
     <Icon class=" absolute   left-3 top-1/2  -translate-y-1/2" name="logos:mastercard" />
-  <input  placeholder="7812 2139 0823 XXXX"  
+  <input  placeholder="7812 2139 0823 XXXX"
   class="  w-full  placeholder:text-sm placeholder:text-black/40  h-[65px] border-[1px] border-[#E2E8F0] rounded-2xl      pl-14 focus:outline-[#E2E8F0] " type="text" name="" id="">
       <Icon class=" absolute     w-[12px] h-[12px]   right-3  top-1/2  -translate-y-1/2" name="ic:twotone-edit" />
 
@@ -70,13 +72,13 @@
 
   <div class="relative  w-[458.5px] ">
     <Icon class=" w-[35px]   h-[8px] absolute  text-[#4318FF]   left-3 top-1/2  -translate-y-1/2" name="logos:visa"   />
-  <input  placeholder="7812 2139 0823 XXXX"  
+  <input  placeholder="7812 2139 0823 XXXX"
   class="  w-full  placeholder:text-sm placeholder:text-black/40  h-[65px] border-[1px] border-[#E2E8F0] rounded-2xl      pl-14 focus:outline-[#E2E8F0] " type="text" name="" id="">
       <Icon class=" absolute     w-[12px] h-[12px]  right-3  top-1/2  -translate-y-1/2" name="ic:twotone-edit" />
 
 </div>
   </div>
-  
+
 
 
 
@@ -104,7 +106,7 @@
       </div>
       <div>
         <span class="  text-main font-normal flex items-center  gap-x-1"> <span class=" text-black/65  text-xs ">{{ it.price }} </span> <Icon class="  text-main" name="material-symbols-light:docs-rounded" /> PDF</span>
-       
+
       </div>
 
     </div>
@@ -123,13 +125,13 @@
 
 
          <p v-if="loading" class=" text-blue-500  font-bold text-xs animate-pulse">loading...</p>
-        
+
         <div v-for="(bi,index) in userData" :key="index" >
           <div class=" p-5 bg-[#F8F9FA]  mt-3 rounded-md">
             <div class=" flex  items-center justify-between">
-               <h1 class=" font-bold  text-sm text-[#718096]">{{ bi.name }}</h1> 
-              <div class=" flex  items-center gap-3 "> 
-                <button class="  text-[#E53E3E] font-bold text-xs flex items-center "> <Icon  name="mdi:trash" /> DELETE</button> 
+               <h1 class=" font-bold  text-sm text-[#718096]">{{ bi.name }}</h1>
+              <div class=" flex  items-center gap-3 ">
+                <button class="  text-[#E53E3E] font-bold text-xs flex items-center "> <Icon  name="mdi:trash" /> DELETE</button>
                 <button class="font-bold text-xs  text-main flex items-center "> <Icon name="ic:outline-edit" />EDIT</button>  </div> </div>
 
                <p class="  text-xs text-[#A0AEC0]  ">Company Name: <span  class=" font-bold  text-gray-400  text-sm">{{ bi.name.includes('p')?'biainat':'microsoft'  }}</span></p>
@@ -139,7 +141,7 @@
 
 
           </div>
-          
+
         </div>
 
       </div>
@@ -176,7 +178,7 @@ const   paymentBox=[
     subtitle:'Freelance Payment',
     pric:'$455.00'
   },
-  
+
 ]
 
 const monthes=[
@@ -277,17 +279,17 @@ onMounted( async()=>{
   operation:'GetUsers',
   variables:{limit: 15},
 })
- userData.value= data.value.users || []; 
+ userData.value= data.value.users || [];
 
  console.log(userData.value);
-    
+
   } catch (error) {
     console.log(error);
-    
+
   }finally{
     loading.value=false
     console.log(userData.value);
-    
+
   }
 
 
